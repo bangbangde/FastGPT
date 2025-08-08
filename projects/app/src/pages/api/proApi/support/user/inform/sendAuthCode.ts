@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextAPI } from '@/service/middleware/entry';
 import { jsonRes } from '@fastgpt/service/common/response';
-import { addAuthCode } from '@fastgpt/service/support/user/auth/controller';
+import { addAuthCode, authCode } from '@fastgpt/service/support/user/auth/controller';
 import { UserAuthTypeEnum } from '@fastgpt/global/support/user/auth/constants';
 import { CommonErrEnum } from '@fastgpt/global/common/error/code/common';
 import { useIPFrequencyLimit } from '@fastgpt/service/common/middle/reqFrequencyLimit';
@@ -19,6 +19,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (!username || !type || !googleToken || !captcha) {
       throw CommonErrEnum.invalidParams;
     }
+
+    // Validate auth code
+    await authCode({
+      key: username,
+      code: captcha,
+      type: UserAuthTypeEnum.captcha
+    });
 
     // 生成随机验证码
     const code = getNanoid(6);

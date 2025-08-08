@@ -142,6 +142,7 @@ const AccountContainer = ({
 
   return (
     <PageContainer isLoading={isLoading}>
+      {feConfigs.isPlus + ''}
       <Flex flexDirection={['column', 'row']} h={'100%'} pt={[4, 0]}>
         {isPc ? (
           <Flex

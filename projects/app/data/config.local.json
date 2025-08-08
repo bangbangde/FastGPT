@@ -1,9 +1,17 @@
 // 已使用 json5 进行解析，会自动去掉注释，无需手动去除
 {
   "feConfigs": {
-    "register_method": ["email", "phone"],
-    "find_password_method": ["email", "phone"],
-    "lafEnv": "https://laf.dev" // laf环境。 https://laf.run （杭州阿里云） ,或者私有化的laf环境。如果使用 Laf openapi 功能，需要最新版的 laf 。
+    "isPlus": true,
+    "googleClientVerKey": "6LfLKJ0rAAAAAMiYM8AB2x6_tiVwEc_6UGfJ2UY8",
+    "register_method": [
+      "email",
+      "phone"
+    ],
+    "find_password_method": [
+      "email",
+      "phone"
+    ],
+    "lafEnv": "https://laf2.dev" // laf环境。 https://laf.run （杭州阿里云） ,或者私有化的laf环境。如果使用 Laf openapi 功能，需要最新版的 laf 。
   },
   "systemEnv": {
     "vectorMaxProcess": 15,
@@ -100,12 +108,36 @@
       "name": "OpenAI TTS1",
       "charsPointsPrice": 0,
       "voices": [
-        { "label": "Alloy", "value": "alloy", "bufferId": "openai-Alloy" },
-        { "label": "Echo", "value": "echo", "bufferId": "openai-Echo" },
-        { "label": "Fable", "value": "fable", "bufferId": "openai-Fable" },
-        { "label": "Onyx", "value": "onyx", "bufferId": "openai-Onyx" },
-        { "label": "Nova", "value": "nova", "bufferId": "openai-Nova" },
-        { "label": "Shimmer", "value": "shimmer", "bufferId": "openai-Shimmer" }
+        {
+          "label": "Alloy",
+          "value": "alloy",
+          "bufferId": "openai-Alloy"
+        },
+        {
+          "label": "Echo",
+          "value": "echo",
+          "bufferId": "openai-Echo"
+        },
+        {
+          "label": "Fable",
+          "value": "fable",
+          "bufferId": "openai-Fable"
+        },
+        {
+          "label": "Onyx",
+          "value": "onyx",
+          "bufferId": "openai-Onyx"
+        },
+        {
+          "label": "Nova",
+          "value": "nova",
+          "bufferId": "openai-Nova"
+        },
+        {
+          "label": "Shimmer",
+          "value": "shimmer",
+          "bufferId": "openai-Shimmer"
+        }
       ]
     }
   ],
